@@ -18,4 +18,10 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 export EDITOR=/usr/bin/vim
 
-#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+# for WSL usage
+export GCCAVR=$HOME/avr-gcc/8.3.0
+export LD_LIBRARY_PATH=$GCCAVR/avr/lib
+export PATH="$GCCAVR/bin:$PATH"
+#export DISPLAY=:0.0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=0
