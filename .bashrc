@@ -8,7 +8,13 @@ case $- in
       *) return;;
 esac
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin
+#export FPCVERSION=3.0.4
+#export FPCTARGET=x86_64-linux
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$HOME/avr-gcc/8.3.0/bin
+export LD_LIBRARY_PATH=$HOME/avr-gcc/8.3.0/avr/lib
+#export DISPLAY=:0.0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=0
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -114,6 +120,7 @@ alias l='ls -CF'
 alias em='emacs -nw'
 alias dd='dd status=progress'
 alias _='sudo'
+alias powershell="/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
