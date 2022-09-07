@@ -22,7 +22,7 @@ export SCREENDIR=$HOME/.screen
 [ -d $SCREENDIR ] || mkdir -p -m 700 $SCREENDIR
 
 # for avr-gcc custom usage
-export GCCAVR=$HOME/avr-gcc/8.3.0
+export GCCAVR=$HOME/.avr-gcc/8.3.0
 export LD_LIBRARY_PATH=$GCCAVR/avr/lib
 export PATH="$GCCAVR/bin:$PATH"
 
