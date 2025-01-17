@@ -22,15 +22,18 @@ export SCREENDIR=$HOME/.screen
 [ -d $SCREENDIR ] || mkdir -p -m 700 $SCREENDIR
 
 # for avr-gcc custom usage
-export GCCAVR=$HOME/.avr-gcc/8.3.0
+#export GCCAVR=$HOME/.avr-gcc/8.3.0
+export GCCAVR=$HOME/.avr-gcc/ver
+#export GCCARM=$HOME/.arm-gcc/10.3
+export GCCARM=$HOME/.arm-gcc/ver
 export LD_LIBRARY_PATH=$GCCAVR/avr/lib
-export PATH="$GCCAVR/bin:$PATH"
+export PATH="$GCCAVR/bin:$GCCARM/bin:$PATH"
 
 # for WLS1+WSL2 using gui
 if [[ "$(uname -r)" = *[Mm]icrosoft* ]]; then
     if [[ -n "$WSL_INTEROP" ]]; then
         # WSL2 detected
-        export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+        #export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
         export LIBGL_ALWAYS_INDIRECT=0
     else
         # WSL1 detected
